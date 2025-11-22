@@ -79,10 +79,10 @@ graph TD
         LLM -->|직접 응답| Response([최종 응답])
         LLM -->|도구 호출| ToolCheck{도구 유형 확인}
         
-        ToolCheck -->|파일 시스템| FS[Filesystem Tool\n(ls, read, write 등)]
+        ToolCheck -->|파일 시스템| FS["Filesystem Tool\n(ls, read, write 등)"]
         FS -->|결과 반환| LLM
         
-        ToolCheck -->|작업 위임| Task[Task Tool\n(Sub-agent Spawner)]
+        ToolCheck -->|작업 위임| Task["Task Tool\n(Sub-agent Spawner)"]
         
         subgraph SubAgent [Sub-agent 생명주기]
             Task --> Spawn[Spawn: 독립 환경 생성]
